@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%-5level][L.%L] %class{36}.%M\(\) -> %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="info"/>
+
+    <logger name="org.thymeleaf" level="warn"/>
+    <logger name="org.thymeleaf.TemplateEngine.CONFIG" level="warn"/>
+    <logger name="org.thymeleaf.TemplateEngine.TIMER" level="warn"/>
+    <logger name="org.thymeleaf.TemplateEngine.CONFIG" level="warn"/>
+    <logger name="org.thymeleaf.TemplateEngine.cache.TEMPLATE_CACHE" level="warn"/>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
