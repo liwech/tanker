@@ -14,6 +14,7 @@
         <module>tanker-data</module>
         <module>tanker-web</module>
         <module>tanker-batch</module>
+        <module>docker-api</module>
     </modules>
 
     <name>tanker</name>
@@ -279,6 +280,18 @@
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-jaxrs</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-xc</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
 
