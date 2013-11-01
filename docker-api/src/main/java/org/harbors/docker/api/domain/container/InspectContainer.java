@@ -1,9 +1,8 @@
 package org.harbors.docker.api.domain.container;
 
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.harbors.docker.api.domain.DockerDomain;
 
-public class InspectContainer implements DockerDomain {
+public class InspectContainer {
 
     @JsonProperty("ID")
     private String id;
