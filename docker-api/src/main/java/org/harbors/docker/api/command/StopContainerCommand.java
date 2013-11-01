@@ -1,19 +1,16 @@
 package org.harbors.docker.api.command;
 
-import org.harbors.docker.api.domain.container.StartContainer;
-
-public class StartContainerCommand extends AbstractCommand<StartContainer> {
+public class StopContainerCommand extends AbstractCommand<String> {
 
     private String containerId;
 
-    public StartContainerCommand(String containerId, StartContainer startContainer) {
+    public StopContainerCommand(String containerId) {
         this.containerId = containerId;
-        setResponse(startContainer);
     }
 
     @Override
     public String getEndPoint() {
-        return "/containers/" + containerId + "/start";
+        return "/containers/" + containerId + "/stop";
     }
 
     @Override

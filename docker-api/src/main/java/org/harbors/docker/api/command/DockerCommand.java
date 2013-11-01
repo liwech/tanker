@@ -10,4 +10,8 @@ public interface DockerCommand {
 
     String getAcceptContentType();
 
+    int getResponseCode();
+
+    void setResponseCode(int code);
+
 }

@@ -5,6 +5,8 @@ import java.lang.reflect.ParameterizedType;
 public abstract class AbstractCommand<T> implements DockerCommand {
 
     protected T response;
+    protected int responseCode;
+
 
     public T getResponse() {
         return response;
@@ -12,6 +14,14 @@ public abstract class AbstractCommand<T> implements DockerCommand {
 
     public void setResponse(T r) {
         this.response = r;
+    }
+
+    public int getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(int responseCode) {
+        this.responseCode = responseCode;
     }
 
     @Override

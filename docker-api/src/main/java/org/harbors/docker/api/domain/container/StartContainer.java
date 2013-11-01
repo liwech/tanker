@@ -1,18 +1,11 @@
 package org.harbors.docker.api.domain.container;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class StartContainer {
 
-    private String containerId;
-
+    @JsonProperty("Binds")
     private String[] binds;
-
-    public String getContainerId() {
-        return containerId;
-    }
-
-    public void setContainerId(String containerId) {
-        this.containerId = containerId;
-    }
 
     public String[] getBinds() {
         return binds;
