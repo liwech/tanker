@@ -2,8 +2,6 @@ package org.harbors.docker.api.command;
 
 import org.harbors.docker.api.domain.container.ListContainer;
 
-import java.util.List;
-
 public class ListContainersCommand extends AbstractCommand<ListContainer[]> {
 
     private Boolean listAll;

@@ -14,7 +14,6 @@ public class StopContainerCommandTest {
 
     private static final Logger logger = LoggerFactory.getLogger(StopContainerCommandTest.class);
 
-
     @Test
     public void stopContainer() {
         DockerClient client = new DockerClient("http://overflow.io:4243");
