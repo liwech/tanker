@@ -10,24 +10,24 @@ import org.slf4j.LoggerFactory;
 
 
 @RunWith(JUnit4.class)
-public class RemoveContainerCommandTest {
+public class KillContainerCommandTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(RemoveContainerCommandTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(KillContainerCommandTest.class);
 
     @Test
-    public void removeContainer() {
+    public void killContainer() {
         DockerClient client = new DockerClient("http://overflow.io:4243");
-        String containerId = "5b22f9adf46f";
-        RemoveContainerCommand command = new RemoveContainerCommand(containerId);
+        String containerId = "cc9b22f88abb";
+        KillContainerCommand command = new KillContainerCommand(containerId);
         client.execute(command);
         Assert.assertEquals(command.getResponseCode(), 204);
     }
 
     @Test
-    public void removeNotExistingContainer() {
+    public void killNotExistingContainer() {
         DockerClient client = new DockerClient("http://overflow.io:4243");
         String containerId = "not-existing-container";
-        RemoveContainerCommand command = new RemoveContainerCommand(containerId, true);
+        KillContainerCommand command = new KillContainerCommand(containerId, 9);
         client.execute(command);
         Assert.assertEquals(command.getResponseCode(), 404);
         Assert.assertEquals("No such container: not-existing-container", command.getResponse().trim());

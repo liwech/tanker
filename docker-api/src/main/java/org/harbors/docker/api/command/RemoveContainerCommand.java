@@ -5,7 +5,6 @@ public class RemoveContainerCommand extends AbstractCommand<String> {
     private String containerId;
     private boolean removeVolume = false;
 
-
     public RemoveContainerCommand(String containerId) {
         this.containerId = containerId;
     }
