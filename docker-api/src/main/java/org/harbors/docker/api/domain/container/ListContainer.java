@@ -16,16 +16,16 @@ public class ListContainer {
     private String command;
 
     @JsonProperty("Created")
-    private String created;
+    private long created;
 
     @JsonProperty("Status")
     private String status;
 
     @JsonProperty("SizeRw")
-    private String sizeRw;
+    private long sizeRw;
 
     @JsonProperty("SizeRootFs")
-    private String sizeRootFs;
+    private long sizeRootFs;
 
     @JsonProperty("Ports")
     private List<Port> ports;
@@ -55,11 +55,11 @@ public class ListContainer {
         this.command = command;
     }
 
-    public String getCreated() {
+    public long getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(long created) {
         this.created = created;
     }
 
@@ -71,19 +71,19 @@ public class ListContainer {
         this.status = status;
     }
 
-    public String getSizeRw() {
+    public long getSizeRw() {
         return sizeRw;
     }
 
-    public void setSizeRw(String sizeRw) {
+    public void setSizeRw(long sizeRw) {
         this.sizeRw = sizeRw;
     }
 
-    public String getSizeRootFs() {
+    public long getSizeRootFs() {
         return sizeRootFs;
     }
 
-    public void setSizeRootFs(String sizeRootFs) {
+    public void setSizeRootFs(long sizeRootFs) {
         this.sizeRootFs = sizeRootFs;
     }
 

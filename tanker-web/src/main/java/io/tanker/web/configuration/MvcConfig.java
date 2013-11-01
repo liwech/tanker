@@ -1,4 +1,4 @@
-package org.harbors.web.configuration;
+package io.tanker.web.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +14,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = {"org.harbors"})
+@ComponentScan(basePackages = {"io.tanker"})
 //@ImportResource({"classpath:database-config.xml", "classpath:security-config.xml"})
 @EnableTransactionManagement
 public class MvcConfig extends WebMvcConfigurerAdapter {

@@ -1,4 +1,4 @@
-package org.harbors.web.configuration;
+package io.tanker.web.configuration;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

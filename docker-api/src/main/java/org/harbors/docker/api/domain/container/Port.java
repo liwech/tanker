@@ -6,27 +6,27 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class Port {
 
     @JsonProperty("PrivatePort")
-    private String privatePort;
+    private int privatePort;
 
     @JsonProperty("PublicPort")
-    private String publicPort;
+    private int publicPort;
 
     @JsonProperty("Type")
     private String type;
 
-    public String getPrivatePort() {
+    public int getPrivatePort() {
         return privatePort;
     }
 
-    public void setPrivatePort(String privatePort) {
+    public void setPrivatePort(int privatePort) {
         this.privatePort = privatePort;
     }
 
-    public String getPublicPort() {
+    public int getPublicPort() {
         return publicPort;
     }
 
-    public void setPublicPort(String publicPort) {
+    public void setPublicPort(int publicPort) {
         this.publicPort = publicPort;
     }
 
