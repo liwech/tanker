@@ -6,7 +6,6 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
 import org.harbors.docker.api.command.AbstractCommand;
-import org.harbors.docker.api.domain.DockerDomain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,15 +39,15 @@ public class DockerClient {
         WebResource webResource = client.resource(serverUrl + command.getEndPoint());
         webResource.accept(command.getAcceptContentType());
 
-        DockerDomain o;
+        Object o;
         switch (command.getMethod()) {
 
             case "GET":
-                o = (DockerDomain) webResource.get(command.getClazz());
+                o = webResource.get(command.getClazz());
                 break;
 
             case "POST":
-                o = (DockerDomain) webResource.post(command.getClazz());
+                o = webResource.post(command.getClazz());
                 break;
 
             default:
