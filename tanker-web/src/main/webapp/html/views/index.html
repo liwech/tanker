@@ -5,10 +5,254 @@
     <title>Tanker.io</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+
+    <link rel="stylesheet" type="text/css" href="/static/css/tanker.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/lib/bootstrap/css/bootstrap.css"/>
+
 </head>
 
 <body>
-Home
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Tanker.io</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+
+    <div class="row">
+
+        <div class="col-md-2" style="background-color: #e9e9e7; border-right: 1px solid #c4cbcc;">
+
+            <div class="row" style="padding-top: 20px; border-bottom: 1px solid lightgray;">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search containers by id"/>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"/> Include offline containers
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!---->
+
+                <div class=" col-md-12 container-item">
+                    <p style="float: right;"><span class="glyphicon glyphicon-time"></span> 31 min</p>
+
+                    <p><span class="glyphicon glyphicon-bookmark"></span> <b>azertyuiop</b></p>
+
+                    <p><span class="glyphicon glyphicon-hdd"></span> nagi/nodejs-cloud9:latest</p>
+
+                    <p><span class="glyphicon glyphicon-cog"></span> /bin/bash</p>
+                </div>
+
+                <div class=" col-md-12 container-item">
+                    <p style="float: right;"><span class="glyphicon glyphicon-time"></span> 31 min</p>
+
+                    <p><span class="glyphicon glyphicon-bookmark"></span> <b>azertyuiop</b></p>
+
+                    <p><span class="glyphicon glyphicon-hdd"></span> nagi/nodejs-cloud9:latest</p>
+
+                    <p><span class="glyphicon glyphicon-cog"></span> /bin/bash</p>
+                </div>
+
+                <div class=" col-md-12 container-item selected">
+                    <p style="float: right;"><span class="glyphicon glyphicon-time"></span> 31 min</p>
+
+                    <p><span class="glyphicon glyphicon-bookmark"></span> <b>azertyuiop</b></p>
+
+                    <p><span class="glyphicon glyphicon-hdd"></span> nagi/nodejs-cloud9:latest</p>
+
+                    <p><span class="glyphicon glyphicon-cog"></span> /bin/bash</p>
+                </div>
+
+                <div class=" col-md-12 container-item">
+                    <p style="float: right;"><span class="glyphicon glyphicon-time"></span> 31 min</p>
+
+                    <p><span class="glyphicon glyphicon-bookmark"></span> <b>azertyuiop</b></p>
+
+                    <p><span class="glyphicon glyphicon-hdd"></span> nagi/nodejs-cloud9:latest</p>
+
+                    <p><span class="glyphicon glyphicon-cog"></span> /bin/bash</p>
+                </div>
+
+                <div class=" col-md-12 container-item">
+                    <p style="float: right;"><span class="glyphicon glyphicon-time"></span> 31 min</p>
+
+                    <p><span class="glyphicon glyphicon-bookmark"></span> <b>azertyuiop</b></p>
+
+                    <p><span class="glyphicon glyphicon-hdd"></span> nagi/nodejs-cloud9:latest</p>
+
+                    <p><span class="glyphicon glyphicon-cog"></span> /bin/bash</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="container-action" class="pull-left"
+             style="width: 40px; height: 600px; background-color: #FDFDFD; text-align: center; padding-top: 20px; border-right: 1px solid #c4cbcc; ">
+            <ul class="list-unstyled">
+                <li style="height: 40px; color: green; opacity: 0.5;">
+                    <span class="glyphicon glyphicon-play-circle" style="font-size: 18px;"></span>
+                </li>
+                <li style="height: 40px;">
+                    <span class="glyphicon glyphicon-stop" style="font-size: 18px;"></span>
+                </li>
+                <li style="height: 40px;">
+                    <span class="glyphicon glyphicon-refresh" style="font-size: 18px;"></span>
+                </li>
+                <li style="height: 40px;">
+                    <span class="glyphicon glyphicon-screenshot" style="font-size: 18px;"></span>
+                </li>
+                <li style="height: 40px;">
+                    <span class="glyphicon glyphicon-trash" style="font-size: 18px;"></span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="container-informations" class="col-md-9" style="padding-left: 20px;">
+
+            <div>
+                <span class="glyphicon glyphicon-bookmark" style="font-size: 22px;"></span>
+                <span style="font-size: 40px;">azertyuiop</span>
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon-hdd" style=""></span>
+                <span style="font-size: 20px;">crosbymichael/dockerui</span>
+            </div>
+
+            <div class="row" style="margin-top: 20px; font-size: 13px;">
+
+                <div class="col-md-3">
+                    <h4>Container Information</h4>
+
+                    <dl class="dl-horizontal container-info">
+                        <dt>Created</dt>
+                        <dd>2013-10-30T20:45:39.00</dd>
+
+                        <dt>Path</dt>
+                        <dd>./dockerui</dd>
+
+                        <dt>Args</dt>
+                        <dd>["-e=http://overflow.io:4243"]</dd>
+
+
+
+                        <dt>Cmd</dt>
+                        <dd>["-e=http://overflow.io:4243"]</dd>
+
+                        <dt>Entrypoint</dt>
+                        <dd>["./dockerui"]</dd>
+
+                        <dt>Volumes</dt>
+                        <dd>{}</dd>
+
+                        <dt>SysInitpath</dt>
+                        <dd>/usr/bin/docker</dd>
+
+                        <dt>Image</dt>
+                        <dd>2947c930108285f12b597f</dd>
+
+                    </dl>
+
+                </div>
+
+                <div class="col-md-3">
+                    <h4>System Information</h4>
+
+                    <dl class="dl-horizontal container-info">
+                        <dt>Hostname</dt>
+                        <dd>cc9b22f88abb</dd>
+
+                        <dt>Domain</dt>
+                        <dd>n/a</dd>
+
+                        <dt>User</dt>
+                        <dd>n/a</dd>
+
+                        <dt>WorkingDir</dt>
+                        <dd>/app/</dd>
+
+                        <dt>Env</dt>
+                        <dd>"HOME=/"</dd>
+
+                        <dt>Memory</dt>
+                        <dd>n/a</dd>
+
+                        <dt>MemorySwap</dt>
+                        <dd>n/a</dd>
+
+                        <dt>CpuShares</dt>
+                        <dd>n/a</dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Network Information</h4>
+
+                    <dl class="dl-horizontal container-info">
+
+                        <dt>NetworkDisabled</dt>
+                        <dd>false</dd>
+
+                        <dt>IPAddress</dt>
+                        <dd>n/a</dd>
+
+                        <dt>IPPrefixLen</dt>
+                        <dd>n/a</dd>
+
+                        <dt>Gateway</dt>
+                        <dd>n/a</dd>
+
+                        <dt>Bridge</dt>
+                        <dd>n/a</dd>
+
+                        <dt>PortMapping</dt>
+                        <dd>["9000"]</dd>
+
+                        <dt>PortSpecs</dt>
+                        <dd>["9000"]</dd>
+
+                        <dt>Dns</dt>
+                        <dd>["8.8.8.8", "8.8.4.4"]</dd>
+                    </dl>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="/static/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/lib/bootstrap/js/bootstrap.js"></script>
+
 </body>
 
 </html>

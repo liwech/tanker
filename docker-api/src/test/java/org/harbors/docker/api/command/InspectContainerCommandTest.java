@@ -12,7 +12,7 @@ public class InspectContainerCommandTest {
 
     @Test
     public void inspectTest() {
-        DockerClient client = new DockerClient("http://overflowx.io:4243");
+        DockerClient client = new DockerClient("http://overflow.io:4243");
         String containerId = "cc9b22f88abb";
         InspectContainerCommand command = new InspectContainerCommand(containerId);
         InspectContainer inspectContainer = client.execute(command).getResponse();
