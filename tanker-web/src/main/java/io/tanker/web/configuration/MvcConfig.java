@@ -16,7 +16,6 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"io.tanker"})
-//@ImportResource({"classpath:database-config.xml", "classpath:security-config.xml"})
 @ImportResource({"classpath:security-config.xml"})
 @EnableTransactionManagement
 public class MvcConfig extends WebMvcConfigurerAdapter {
@@ -46,13 +45,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         return engine;
     }
 
-    /**
-     * Manage static ressources like mvc:resources in xml
-     * http://stackoverflow.com/questions/14861720/annotation-configuration-replacement-for-mvcresources-spring
-     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+        registry.addResourceHandler("/app/**").addResourceLocations("/app/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/images/");
     }
 
 }

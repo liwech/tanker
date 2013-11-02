@@ -1,5 +1,6 @@
 package io.tanker.web.configuration;
 
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
@@ -13,6 +14,7 @@ public class Initializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext mvcContext = getAnnotationConfigWebApplicationContext(servletContext);
         configureDispatcher(servletContext, mvcContext);
+        installJavaUtilLoggingBridge();
     }
 
     private AnnotationConfigWebApplicationContext getAnnotationConfigWebApplicationContext(ServletContext servletContext) {
@@ -33,6 +35,11 @@ public class Initializer implements WebApplicationInitializer {
                 servletContext.addServlet("dispatcher", new DispatcherServlet(mvcContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
+    }
+
+    private void installJavaUtilLoggingBridge() {
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
     }
 
 }
