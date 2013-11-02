@@ -2,11 +2,11 @@ package io.tanker.web.configuration;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
+import java.util.EnumSet;
 
 public class Initializer implements WebApplicationInitializer {
 
@@ -19,6 +19,12 @@ public class Initializer implements WebApplicationInitializer {
         AnnotationConfigWebApplicationContext mvcContext = new AnnotationConfigWebApplicationContext();
         mvcContext.setServletContext(servletContext);
         mvcContext.register(MvcConfig.class);
+
+        // spring security
+        DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy("springSecurityFilterChain", mvcContext);
+        FilterRegistration fr = servletContext.addFilter("securityFilter", delegatingFilterProxy);
+        fr.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD), true, "/*");
+
         return mvcContext;
     }
 

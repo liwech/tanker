@@ -3,6 +3,7 @@ package io.tanker.web.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -16,6 +17,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @Configuration
 @ComponentScan(basePackages = {"io.tanker"})
 //@ImportResource({"classpath:database-config.xml", "classpath:security-config.xml"})
+@ImportResource({"classpath:security-config.xml"})
 @EnableTransactionManagement
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
