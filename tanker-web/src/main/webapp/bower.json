@@ -1,0 +1,9 @@
+{
+    "name": "tanker-web",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "3.0.1",
+        "angular": "1.0.8",
+        "underscore": "1.5.2"
+    }
+}
