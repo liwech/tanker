@@ -3,6 +3,8 @@ package org.harbors.docker.api.domain.container;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.util.Map;
+
 public class Config {
 
     @JsonProperty("Hostname")
@@ -57,7 +59,7 @@ public class Config {
     private String image;
 
     @JsonProperty("Volumes")
-    private Volume volumes;
+    private Map volumes;
 
     @JsonProperty("VolumesFrom")
     private String volumesFrom;
@@ -210,11 +212,11 @@ public class Config {
         this.image = image;
     }
 
-    public Volume getVolumes() {
+    public Map getVolumes() {
         return volumes;
     }
 
-    public void setVolumes(Volume volumes) {
+    public void setVolumes(Map volumes) {
         this.volumes = volumes;
     }
 

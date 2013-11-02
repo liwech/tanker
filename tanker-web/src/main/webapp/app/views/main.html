@@ -1,0 +1,59 @@
+<div class="row">
+
+    <div id="container-list" class="col-md-3">
+
+        <div class="row search-box">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search containers" name="query.search"
+                           ng-model="query.search"/>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="includeOffline" ng-change="listContainers()"/>
+                        Include offline containers
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" ng-show="containers == undefined">
+            <div class="col-md-12 search-loading-box">
+                <div>Loading containers</div>
+                <img src="/images/ajax-loader.gif"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 container-item"
+                 ng-click="inspectContainer(c.Id)"
+                 ng-class="{'container-off' : (c.Status.substr(0,2) != 'Up'), 'selected' : (c.Id == container.ID)}"
+                 ng-repeat="c in containers | filter: query.search">
+
+                <p class="pull-right">
+                    <span class="glyphicon glyphicon-time"></span>
+                    {{c.Status}}
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <b>{{c.Id.substr(0,20)}}</b>
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-hdd"></span>
+                    {{c.Image}}
+                </p>
+
+                <p>
+                    <span class="glyphicon glyphicon-cog"></span>
+                    {{c.Command}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-include="'app/views/partials/container.html'"></div>
+
+</div>

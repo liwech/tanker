@@ -17,7 +17,7 @@ public class NetworkSettings {
     private String bridge;
 
     @JsonProperty("PortMapping")
-    private String portMapping;
+    private PortMapping portMapping;
 
     public String getIpAddress() {
         return ipAddress;
@@ -51,11 +51,11 @@ public class NetworkSettings {
         this.bridge = bridge;
     }
 
-    public String getPortMapping() {
+    public PortMapping getPortMapping() {
         return portMapping;
     }
 
-    public void setPortMapping(String portMapping) {
+    public void setPortMapping(PortMapping portMapping) {
         this.portMapping = portMapping;
     }
 

@@ -1,0 +1,127 @@
+<div ng-show="container.ID == undefinded">
+    <img src="/images/ajax-loader.gif"/>
+</div>
+
+<div id="container-informations" class="col-md-9" style="padding-left: 20px;" ng-show="container.ID">
+
+    <div>
+        <span class="glyphicon glyphicon-bookmark" style="font-size: 22px;"></span>
+        <span style="font-size: 40px;">{{container.ID.substr(0,20)}}</span>
+    </div>
+
+    <div>
+        <span class="glyphicon glyphicon-hdd" style=""></span>
+        <span style="font-size: 20px;">{{container.Config.Image}}</span>
+    </div>
+
+    <div style="margin-top: 10px;">
+            <span class="glyphicon glyphicon-play-circle" style="font-size: 18px; color: green;cursor: pointer"
+                  ng-click="startContainer(container.ID)"></span>
+            <span class="glyphicon glyphicon-stop" style="font-size: 18px; cursor: pointer"
+                  ng-click="stopContainer(container.ID)"></span>
+            <span class="glyphicon glyphicon-refresh" style="font-size: 18px; cursor: pointer"
+                  ng-click="restartContainer(container.ID)"></span>
+            <span class="glyphicon glyphicon-trash" style="font-size: 18px; cursor: pointer"
+                  ng-click="removeContainer(container.ID)"></span>
+            <span class="glyphicon glyphicon-screenshot" style="font-size: 18px; cursor: pointer"
+                  ng-click="killContainer(container.ID)"></span>
+    </div>
+
+    <div class="row" style="margin-top: 10px; font-size: 13px;">
+
+        <div class="col-md-3">
+            <h4>Container Information</h4>
+
+            <dl class="dl-horizontal container-info">
+                <dt>Created</dt>
+                <dd>{{container.Created}}</dd>
+
+                <dt>Path</dt>
+                <dd>{{container.Path}}</dd>
+
+                <dt>Args</dt>
+                <dd>{{container.Args}}</dd>
+
+                <dt>Cmd</dt>
+                <dd>{{container.Config.Cmd}}</dd>
+
+                <dt>Entrypoint</dt>
+                <dd>{{container.Config.Entrypoint}}</dd>
+
+                <dt>Volumes</dt>
+                <dd>{{container.Config.Volumes}}</dd>
+
+                <dt>SysInitpath</dt>
+                <dd>{{container.SysInitPath}}</dd>
+
+                <dt>Image</dt>
+                <dd>{{container.Image.substr(0,20)}}</dd>
+
+            </dl>
+
+        </div>
+
+        <div class="col-md-3">
+            <h4>System Information</h4>
+
+            <dl class="dl-horizontal container-info">
+                <dt>Hostname</dt>
+                <dd>{{container.Config.Hostname}}</dd>
+
+                <dt>Domain</dt>
+                <dd>{{container.Config.Domain}}</dd>
+
+                <dt>User</dt>
+                <dd>{{container.Config.User}}</dd>
+
+                <dt>WorkingDir</dt>
+                <dd>{{container.Config.WorkingDir}}</dd>
+
+                <dt>Env</dt>
+                <dd>{{container.Config.Env[0]}}</dd>
+
+                <dt>Memory</dt>
+                <dd>{{container.Config.Memory}}</dd>
+
+                <dt>MemorySwap</dt>
+                <dd>{{container.Config.MemorySwap}}</dd>
+
+                <dt>CpuShares</dt>
+                <dd>{{container.Config.CpuShares}}</dd>
+            </dl>
+        </div>
+
+        <div class="col-md-3">
+            <h4>Network Information</h4>
+
+            <dl class="dl-horizontal container-info">
+
+                <dt>NetworkDisabled</dt>
+                <dd>{{container.Config.NetworkDisabled}}</dd>
+
+                <dt>IPAddress</dt>
+                <dd>{{container.NetworkSettings.IPAddress}}</dd>
+
+                <dt>IPPrefixLen</dt>
+                <dd>{{container.NetworkSettings.IPPrefixLen}}</dd>
+
+                <dt>Gateway</dt>
+                <dd>{{container.NetworkSettings.Gateway}}</dd>
+
+                <dt>Bridge</dt>
+                <dd>{{container.NetworkSettings.Bridge}}</dd>
+
+                <dt>PortMapping</dt>
+                <dd>{{container.NetworkSettings.PortMapping}}</dd>
+
+                <dt>PortSpecs</dt>
+                <dd>{{container.Config.PortSpecs}}</dd>
+
+                <dt>Dns</dt>
+                <dd>{{container.Config.Dns}}</dd>
+            </dl>
+        </div>
+
+    </div>
+
+</div>

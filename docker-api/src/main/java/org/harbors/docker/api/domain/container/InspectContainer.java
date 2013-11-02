@@ -2,6 +2,8 @@ package org.harbors.docker.api.domain.container;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.util.Map;
+
 public class InspectContainer {
 
     @JsonProperty("ID")
@@ -41,10 +43,10 @@ public class InspectContainer {
     private String hostsPath;
 
     @JsonProperty("Volumes")
-    private Volume volumes;
+    private Map volumes;
 
     @JsonProperty("VolumesRW")
-    private Volume volumesRW;
+    private Map volumesRW;
 
     public String getId() {
         return id;
@@ -142,19 +144,19 @@ public class InspectContainer {
         this.hostsPath = hostsPath;
     }
 
-    public Volume getVolumes() {
+    public Map getVolumes() {
         return volumes;
     }
 
-    public void setVolumes(Volume volumes) {
+    public void setVolumes(Map volumes) {
         this.volumes = volumes;
     }
 
-    public Volume getVolumesRW() {
+    public Map getVolumesRW() {
         return volumesRW;
     }
 
-    public void setVolumesRW(Volume volumesRW) {
+    public void setVolumesRW(Map volumesRW) {
         this.volumesRW = volumesRW;
     }
 }
