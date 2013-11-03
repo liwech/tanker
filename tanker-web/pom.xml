@@ -16,7 +16,7 @@
 
         <dependency>
             <groupId>io.tanker</groupId>
-            <artifactId>tanker-data</artifactId>
+            <artifactId>tanker-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 

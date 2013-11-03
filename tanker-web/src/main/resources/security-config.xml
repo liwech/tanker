@@ -6,17 +6,34 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <http auto-config="true">
-        <intercept-url pattern="/containers" access="ROLE_USER"/>
-        <intercept-url pattern="/containers/*" access="ROLE_USER"/>
+    <http pattern="/app/**" security="none"/>
+    <http pattern="/images/**" security="none"/>
+    <http pattern="/login*" security="none"/>
+
+    <http auto-config="true" use-expressions="true" create-session="ifRequired">
+        <remember-me key="tankerRememberKey"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <form-login
+                login-processing-url="/authentication"
+                login-page="/login"
+                authentication-failure-url="/login?action=loginFailure"
+                default-target-url="/"/>
+
+        <logout logout-url="/logout"
+                logout-success-url="/login"/>
     </http>
 
     <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="user" password="123456" authorities="ROLE_USER"/>
-            </user-service>
-        </authentication-provider>
+        <authentication-provider ref="daoAuthenticationProvider"/>
     </authentication-manager>
+
+    <beans:bean id="daoAuthenticationProvider"
+                class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="userDetailsService"/>
+        <beans:property name="passwordEncoder">
+            <beans:bean class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
+        </beans:property>
+    </beans:bean>
 
 </beans:beans>

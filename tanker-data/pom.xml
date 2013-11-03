@@ -15,12 +15,6 @@
     <dependencies>
 
         <dependency>
-            <groupId>io.tanker</groupId>
-            <artifactId>tanker-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
         </dependency>

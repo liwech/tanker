@@ -14,6 +14,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.tanker</groupId>
+            <artifactId>tanker-data</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <artifactId>docker-api</artifactId>
             <groupId>io.tanker</groupId>
             <version>${project.version}</version>

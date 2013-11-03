@@ -1,6 +1,8 @@
 package io.tanker.web.controller;
 
+import io.tanker.model.User;
 import io.tanker.service.ContainerService;
+import io.tanker.web.security.AuthenticationService;
 import org.harbors.docker.api.domain.container.InspectContainer;
 import org.harbors.docker.api.domain.container.ListContainer;
 import org.slf4j.Logger;
@@ -24,17 +26,22 @@ public class ContainerController {
     @Autowired
     private ContainerService containerService;
 
+    @Autowired
+    private AuthenticationService authenticationService;
+
     @ResponseBody
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public List<ListContainer> list(Boolean includeOffline) {
-        return containerService.getAllContainer(1L, includeOffline);
+    public List<ListContainer> list(boolean includeOffline) {
+        User currentUser = authenticationService.getCurrentUser();
+        return containerService.getAllContainer(currentUser.getId(), includeOffline);
     }
 
     @ResponseBody
     @RequestMapping(value = "/inspect/{containerIds}", method = RequestMethod.GET)
     public List<InspectContainer> inspect(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        return containerService.inspect(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        return containerService.inspect(currentUser.getId(), containerIds);
     }
 
 
@@ -42,35 +49,40 @@ public class ContainerController {
     @RequestMapping(value = "/start/{containerIds}", method = RequestMethod.GET)
     public void start(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        containerService.start(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        containerService.start(currentUser.getId(), containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/stop/{containerIds}", method = RequestMethod.GET)
     public void stop(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        containerService.stop(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        containerService.stop(currentUser.getId(), containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/restart/{containerIds}", method = RequestMethod.GET)
     public void restart(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        containerService.restart(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        containerService.restart(currentUser.getId(), containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/remove/{containerIds}", method = RequestMethod.GET)
     public void remove(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        containerService.remove(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        containerService.remove(currentUser.getId(), containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/kill/{containerIds}", method = RequestMethod.GET)
     public void kill(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        containerService.kill(1L, containerIds);
+        User currentUser = authenticationService.getCurrentUser();
+        containerService.kill(currentUser.getId(), containerIds);
     }
 
 }

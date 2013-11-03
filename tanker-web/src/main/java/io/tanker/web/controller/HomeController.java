@@ -18,4 +18,10 @@ public class HomeController {
         return new ModelAndView("/views/index");
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login() {
+        logger.info("Welcome home!");
+        return new ModelAndView("/views/login");
+    }
+
 }
