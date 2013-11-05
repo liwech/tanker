@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/containers")
+@RequestMapping("/app/containers")
 public class ContainerController {
 
     private static final Logger logger = LoggerFactory.getLogger(ContainerController.class);

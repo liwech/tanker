@@ -20,7 +20,6 @@ public class HomeController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
-        logger.info("Welcome home!");
         return new ModelAndView("/views/login");
     }
 

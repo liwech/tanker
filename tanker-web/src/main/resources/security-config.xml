@@ -6,22 +6,18 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <http pattern="/app/**" security="none"/>
-    <http pattern="/images/**" security="none"/>
-    <http pattern="/login*" security="none"/>
-
     <http auto-config="true" use-expressions="true" create-session="ifRequired">
         <remember-me key="tankerRememberKey"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/app/**" access="isAuthenticated()"/>
 
         <form-login
                 login-processing-url="/authentication"
                 login-page="/login"
                 authentication-failure-url="/login?action=loginFailure"
-                default-target-url="/"/>
+                default-target-url="/app"/>
 
         <logout logout-url="/logout"
-                logout-success-url="/login"/>
+                logout-success-url="/"/>
     </http>
 
     <authentication-manager>
