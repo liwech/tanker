@@ -32,16 +32,16 @@ public class ContainerController {
     @ResponseBody
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<ListContainer> list(boolean includeOffline) {
-        User currentUser = authenticationService.getCurrentUser();
-        return containerService.getAllContainer(currentUser.getId(), includeOffline);
+        long currentUserId = authenticationService.getCurrentUserId();
+        return containerService.getAllContainer(currentUserId, includeOffline);
     }
 
     @ResponseBody
     @RequestMapping(value = "/inspect/{containerIds}", method = RequestMethod.GET)
     public List<InspectContainer> inspect(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        return containerService.inspect(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        return containerService.inspect(currentUserId, containerIds);
     }
 
 
@@ -49,40 +49,40 @@ public class ContainerController {
     @RequestMapping(value = "/start/{containerIds}", method = RequestMethod.GET)
     public void start(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        containerService.start(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        containerService.start(currentUserId, containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/stop/{containerIds}", method = RequestMethod.GET)
     public void stop(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        containerService.stop(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        containerService.stop(currentUserId, containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/restart/{containerIds}", method = RequestMethod.GET)
     public void restart(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        containerService.restart(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        containerService.restart(currentUserId, containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/remove/{containerIds}", method = RequestMethod.GET)
     public void remove(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        containerService.remove(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        containerService.remove(currentUserId, containerIds);
     }
 
     @ResponseBody
     @RequestMapping(value = "/kill/{containerIds}", method = RequestMethod.GET)
     public void kill(@PathVariable String[] containerIds) {
         Assert.notNull(containerIds);
-        User currentUser = authenticationService.getCurrentUser();
-        containerService.kill(currentUser.getId(), containerIds);
+        long currentUserId = authenticationService.getCurrentUserId();
+        containerService.kill(currentUserId, containerIds);
     }
 
 }

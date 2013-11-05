@@ -28,6 +28,6 @@ public class TankerUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User " + username + " not found");
         }
 
-        return new org.springframework.security.core.userdetails.User(username, user.getPassword(), Collections.EMPTY_SET);
+        return new TankerUserDetails(user.getId(), username, user.getPassword(), Collections.EMPTY_SET);
     }
 }

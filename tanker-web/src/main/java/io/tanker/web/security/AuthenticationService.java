@@ -14,6 +14,11 @@ public class AuthenticationService {
     @Autowired
     private UserDaoMocked userDao;
 
+    public long getCurrentUserId() {
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        return ((TankerUserDetails) securityContext.getAuthentication().getPrincipal()).getId();
+    }
+
     public User getCurrentUser() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         UserDetails springSecurityUser = (UserDetails) securityContext.getAuthentication().getPrincipal();
