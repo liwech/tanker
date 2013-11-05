@@ -42,6 +42,9 @@ public class InspectContainer {
     @JsonProperty("HostsPath")
     private String hostsPath;
 
+    @JsonProperty("Name")
+    private String name;
+
     @JsonProperty("Volumes")
     private Map volumes;
 
@@ -142,6 +145,14 @@ public class InspectContainer {
 
     public void setHostsPath(String hostsPath) {
         this.hostsPath = hostsPath;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Map getVolumes() {

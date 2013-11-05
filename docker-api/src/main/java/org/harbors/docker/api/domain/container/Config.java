@@ -1,6 +1,5 @@
 package org.harbors.docker.api.domain.container;
 
-
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.Map;
@@ -36,6 +35,9 @@ public class Config {
 
     @JsonProperty("PortSpecs")
     private String[] portSpecs;
+
+    @JsonProperty("ExposedPorts")
+    private Map exposedPorts;
 
     @JsonProperty("Tty")
     private String tty;
@@ -154,6 +156,14 @@ public class Config {
 
     public void setPortSpecs(String[] portSpecs) {
         this.portSpecs = portSpecs;
+    }
+
+    public Map getExposedPorts() {
+        return exposedPorts;
+    }
+
+    public void setExposedPorts(Map exposedPorts) {
+        this.exposedPorts = exposedPorts;
     }
 
     public String getTty() {

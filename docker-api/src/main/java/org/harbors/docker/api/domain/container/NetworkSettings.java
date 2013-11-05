@@ -2,6 +2,8 @@ package org.harbors.docker.api.domain.container;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.util.Map;
+
 public class NetworkSettings {
 
     @JsonProperty("IPAddress")
@@ -18,6 +20,9 @@ public class NetworkSettings {
 
     @JsonProperty("PortMapping")
     private PortMapping portMapping;
+
+    @JsonProperty("Ports")
+    private Map ports;
 
     public String getIpAddress() {
         return ipAddress;
@@ -59,4 +64,11 @@ public class NetworkSettings {
         this.portMapping = portMapping;
     }
 
+    public Map getPorts() {
+        return ports;
+    }
+
+    public void setPorts(Map ports) {
+        this.ports = ports;
+    }
 }

@@ -30,6 +30,9 @@ public class ListContainer {
     @JsonProperty("Ports")
     private List<Port> ports;
 
+    @JsonProperty("Names")
+    private String[] names;
+
 
     public String getId() {
         return id;
@@ -95,4 +98,11 @@ public class ListContainer {
         this.ports = ports;
     }
 
+    public String[] getNames() {
+        return names;
+    }
+
+    public void setNames(String[] names) {
+        this.names = names;
+    }
 }
